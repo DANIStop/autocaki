@@ -27,6 +27,7 @@ export async function POST(request: Request) {
 
   // 1) Spremi upit u Supabase (tablica `inquiries`) ako je baza spojena.
   const supabase = getSupabaseServerClient();
+  let saved = false;
   if (supabase) {
     const { error } = await supabase.from("inquiries").insert({
       name,
@@ -38,8 +39,16 @@ export async function POST(request: Request) {
     if (error) {
       console.error("Supabase insert (inquiries) failed:", error.message);
       // ne prekidamo - mail ide dalje i bez zapisa u bazi
+    } else {
+      saved = true;
     }
   }
+
+  // Ako upit nije ni spremljen ni poslan, javi grešku da forma ne prikaže lažni uspjeh.
+  const notDelivered = () =>
+    saved
+      ? NextResponse.json({ ok: true, emailed: false })
+      : NextResponse.json({ error: "not_delivered" }, { status: 502 });
 
   // 2) Pošalji mail preko Resenda.
   const resend = getResendClient();
@@ -47,11 +56,12 @@ export async function POST(request: Request) {
     console.warn(
       "RESEND_API_KEY nije postavljen — upit je zapisan u bazu (ako je spojena), mail nije poslan.",
     );
-    return NextResponse.json({ ok: true, emailed: false });
+    return notDelivered();
   }
 
   try {
-    await resend.emails.send({
+    // Resend ne baca grešku nego je vraća u `error` — zato je provjeravamo ručno.
+    const { error } = await resend.emails.send({
       from: CONTACT_EMAIL_FROM,
       to: CONTACT_EMAIL_TO,
       replyTo: email || undefined,
@@ -67,9 +77,13 @@ export async function POST(request: Request) {
         .filter(Boolean)
         .join("\n"),
     });
+    if (error) {
+      console.error("Resend send failed:", error);
+      return notDelivered();
+    }
   } catch (err) {
     console.error("Resend send failed:", err);
-    return NextResponse.json({ ok: true, emailed: false });
+    return notDelivered();
   }
 
   return NextResponse.json({ ok: true, emailed: true });
