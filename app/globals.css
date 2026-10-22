@@ -36,6 +36,48 @@ h1, h2, h3, h4 {
   letter-spacing: 0.01em;
 }
 
+/* ---------------------------------------------------------------------------
+   Hero: linijska scena (components/home/TowScene.tsx) + kinetički naslov
+   --------------------------------------------------------------------------- */
+.tow-stroke { fill: none; stroke: #fff; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+.tow-thin { stroke-width: 2; }
+.tow-red { fill: none; stroke: var(--color-accent); stroke-width: 3.2; stroke-linecap: round; }
+.tow-light { fill: #fff; opacity: 0.9; }
+.tow-tail { fill: var(--color-accent); }
+
+.tow-draw, .tow-draw circle, .tow-draw path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: tow-draw 1.4s cubic-bezier(.65,0,.35,1) forwards; animation-delay: inherit; }
+.tow-draw .tow-spin line { stroke-dasharray: none; stroke-dashoffset: 0; }
+@keyframes tow-draw { to { stroke-dashoffset: 0; } }
+
+.tow-spin { animation: tow-spin 0.9s linear infinite; animation-delay: 1.8s; }
+@keyframes tow-spin { to { transform: rotate(360deg); } }
+
+.tow-road { animation: tow-road 0.9s linear infinite; animation-delay: 1.8s; }
+@keyframes tow-road { to { transform: translateX(-120px); } }
+
+.tow-speed { animation: tow-speed 3.2s linear infinite; }
+@keyframes tow-speed { from { transform: translateX(200px); } to { transform: translateX(-260px); } }
+
+.tow-bob .tow-suv { animation: tow-bob 1.6s ease-in-out infinite alternate; animation-delay: 1.8s; }
+.tow-bob .tow-trailer { animation: tow-bob 1.6s ease-in-out infinite alternate; animation-delay: 2.1s; }
+@keyframes tow-bob { from { transform: translateY(0); } to { transform: translateY(-1.6px); } }
+
+.tow-beam { opacity: 0; animation: tow-beam 2.4s ease-in-out infinite alternate; animation-delay: 1.6s; }
+@keyframes tow-beam { from { opacity: 0.35; } to { opacity: 0.8; } }
+
+.hero-word { display: inline-block; overflow: hidden; vertical-align: bottom; }
+.hero-word > span { display: inline-block; transform: translateY(105%); animation: hero-rise 0.9s cubic-bezier(.2,.8,.2,1) forwards; }
+@keyframes hero-rise { to { transform: translateY(0); } }
+.hero-fade { opacity: 0; transform: translateY(12px); animation: hero-fade 0.8s ease-out forwards; }
+@keyframes hero-fade { to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .tow-draw, .tow-draw circle, .tow-draw path { animation: none; stroke-dashoffset: 0; }
+  .tow-spin, .tow-road, .tow-speed, .tow-bob .tow-suv, .tow-bob .tow-trailer { animation: none; }
+  .tow-beam { animation: none; opacity: 0.5; }
+  .hero-word > span, .hero-fade { animation: none; transform: none; opacity: 1; }
+}
+
 ::selection {
   background: var(--color-accent);
   color: #ffffff;

@@ -43,6 +43,26 @@ export default function KontaktPage() {
         </div>
         <ContactForm defaultSubject="Opći upit s /kontakt" />
       </div>
+
+      {/* OpenStreetMap ne postavlja kolačiće, pa karta ne traži pristanak. */}
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 pb-16 sm:pb-20">
+        <div className="overflow-hidden rounded-lg border border-line">
+          <iframe
+            title={`Karta: ${SITE.street}, ${SITE.city}`}
+            src={`https://www.openstreetmap.org/export/embed.html?bbox=${SITE.lon - 0.008}%2C${SITE.lat - 0.0045}%2C${SITE.lon + 0.008}%2C${SITE.lat + 0.0045}&layer=mapnik&marker=${SITE.lat}%2C${SITE.lon}`}
+            loading="lazy"
+            className="block h-72 sm:h-96 w-full"
+          />
+        </div>
+        <a
+          href={SITE.mapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mt-3 text-sm font-semibold text-accent"
+        >
+          Upute za dolazak (Google karte) ↗
+        </a>
+      </div>
     </section>
   );
 }

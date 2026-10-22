@@ -34,8 +34,10 @@ const LOCAL_BUSINESS = {
     "@type": "PostalAddress",
     streetAddress: SITE.street,
     addressLocality: SITE.city,
+    postalCode: SITE.postalCode,
     addressCountry: SITE.country,
   },
+  geo: { "@type": "GeoCoordinates", latitude: SITE.lat, longitude: SITE.lon },
   areaServed: ["Hrvatska", "Europska unija"],
   sameAs: [SITE.instagram],
   makesOffer: [

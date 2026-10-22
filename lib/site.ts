@@ -8,6 +8,9 @@ export const SITE = {
   street: "Ulica Božidara Magovca 109",
   city: "Zagreb",
   country: "HR",
+  postalCode: "10010",
+  lat: 45.7695846,
+  lon: 16.0002844,
   instagram: "https://instagram.com/autocaki.hr",
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=" +
