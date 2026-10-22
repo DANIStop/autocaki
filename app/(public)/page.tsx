@@ -112,17 +112,12 @@ export default function HomePage() {
           </p>
           <div className="flex gap-3 mt-2">
             <a
-              href="https://instagram.com/autocaki"
+              href="https://instagram.com/autocaki.hr"
               className="border border-white/30 hover:border-white text-sm font-semibold px-5 py-2.5 rounded"
             >
               Instagram
             </a>
-            <a
-              href="https://facebook.com/autocaki"
-              className="border border-white/30 hover:border-white text-sm font-semibold px-5 py-2.5 rounded"
-            >
-              Facebook
-            </a>
+            {/* TODO: Facebook gumb — dodati kad dobijemo pravu adresu stranice */}
           </div>
         </div>
       </section>

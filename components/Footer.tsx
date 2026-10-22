@@ -37,17 +37,15 @@ export default function Footer() {
             Društvene mreže
           </div>
           <div className="flex gap-4 text-sm">
-            <a href="https://instagram.com/autocaki" className="hover:text-accent">
+            <a href="https://instagram.com/autocaki.hr" className="hover:text-accent">
               Instagram
             </a>
-            <a href="https://facebook.com/autocaki" className="hover:text-accent">
-              Facebook
-            </a>
+            {/* TODO: Facebook link — dodati kad dobijemo pravu adresu stranice */}
           </div>
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="max-w-6xl mx-auto px-5 sm:px-8 py-4 flex flex-wrap justify-between gap-2 text-xs text-white/60">
+        <div className="max-w-6xl mx-auto px-5 sm:px-8 pt-4 pb-24 sm:pb-4 flex flex-wrap justify-between gap-2 text-xs text-white/60">
           {/* Next.js (cacheComponents) prerenderira statički, pa je godina fiksna — ažurirati kad treba */}
           <span>© 2026 Auto Čaki. Sva prava pridržana.</span>
           <Link href="/kontakt" className="hover:text-accent">
