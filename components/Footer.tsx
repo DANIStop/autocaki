@@ -22,8 +22,9 @@ export default function Footer() {
           <div className="text-xs font-semibold tracking-widest uppercase text-accent mb-2">
             Telefon
           </div>
-          {/* TODO: upisati stvarni broj telefona */}
-          <span className="text-sm">[BROJ TELEFONA]</span>
+          <a href="tel:+385996600888" className="text-sm hover:text-accent">
+            +385 99 660 0888
+          </a>
         </div>
         <div>
           <div className="text-xs font-semibold tracking-widest uppercase text-accent mb-2">

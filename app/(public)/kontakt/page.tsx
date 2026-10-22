@@ -22,8 +22,7 @@ export default function KontaktPage() {
               <div className="text-xs font-semibold tracking-widest uppercase text-accent mb-1">
                 Telefon
               </div>
-              {/* TODO: upisati stvarni broj telefona */}
-              <span>[BROJ TELEFONA]</span>
+              <a href="tel:+385996600888">+385 99 660 0888</a>
             </div>
             <div>
               <div className="text-xs font-semibold tracking-widest uppercase text-accent mb-1">

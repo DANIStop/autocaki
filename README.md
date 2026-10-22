@@ -43,7 +43,6 @@ npm run dev
 
 - Stvarne fotografije vozila/usluga (zamjena za "Slika 1..8" placeholdere na
   naslovnoj).
-- Stvarni broj telefona (trenutno `[BROJ TELEFONA]` u headeru/footeru/kontaktu).
 - Pravi testimonijali kad ih skupiš (trenutno 3 izmišljena, za test).
 - Supabase, Resend, GitHub i Vercel pristup/tokeni — kad kažeš da si spreman, javi i
   provest ćemo postavljanje zajedno (ti otvoriš, ja pišem/deployam).
