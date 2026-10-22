@@ -3,7 +3,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata = {
   title: "Uvoz automobila iz Njemačke, Austrije, Italije i cijele EU",
   description:
-    "Uvoz automobila iz Njemačke, Austrije, Italije, Belgije, Nizozemske i gotovo svake europske zemlje. Pronađemo auto, provjerimo ga i dovezemo vlastitom prikolicom — brzo i efikasno.",
+    "Uvoz automobila iz Njemačke, Austrije, Italije, Belgije, Nizozemske i drugih zemalja EU. Pronalazak vozila prema zahtjevima klijenta, provjera stanja i povijesti te isporuka do kupca.",
   alternates: { canonical: "/usluge/uvoz" },
 };
 
@@ -12,26 +12,26 @@ const COUNTRIES = ["Njemačka", "Austrija", "Italija", "Belgija", "Nizozemska", 
 const STEPS = [
   {
     title: "Recite nam što tražite",
-    body: "Marka, model, godište, kilometraža i budžet. Ako već imate oglas iz inozemstva, pošaljite nam link.",
+    body: "Marka, model, godište, kilometraža i budžet. Ako već imate oglas iz inozemstva, pošaljite nam poveznicu.",
   },
   {
     title: "Pronalazimo i provjeravamo vozilo",
-    body: "Pretražujemo ponudu po cijeloj Europi, provjeravamo stanje i povijest vozila te vam javljamo sve troškove prije kupnje.",
+    body: "Pretražujemo ponudu po cijeloj Europi, provjeravamo stanje i povijest vozila te dostavljamo izračun svih troškova prije kupnje.",
   },
   {
     title: "Kupnja i preuzimanje",
-    body: "Kad potvrdite, dogovaramo kupnju i preuzimamo auto kod prodavača u inozemstvu.",
+    body: "Nakon vaše potvrde dogovaramo kupnju i preuzimamo vozilo kod prodavatelja u inozemstvu.",
   },
   {
-    title: "Dovoz do vas",
-    body: "Vozilo dovozimo vlastitim vozilom i autoprikolicom — bez posrednika i bez čekanja na tuđe prijevoznike.",
+    title: "Isporuka",
+    body: "Vozilo isporučujemo vlastitim transportnim vozilom i autoprikolicom na adresu kupca.",
   },
 ];
 
 const FAQ = [
   {
     q: "Iz kojih država uvozite automobile?",
-    a: "Najčešće iz Njemačke, Austrije, Italije, Belgije i Nizozemske, ali uvozimo iz gotovo svake europske zemlje — tamo gdje je ponuda za vaš auto najbolja.",
+    a: "Najčešće iz Njemačke, Austrije, Italije, Belgije i Nizozemske, a prema potrebi i iz drugih zemalja EU.",
   },
   {
     q: "Što je uključeno u cijenu?",
@@ -39,11 +39,11 @@ const FAQ = [
   },
   {
     q: "Koliko traje uvoz automobila?",
-    a: "Ovisi o državi, udaljenosti i dostupnosti vozila. Uvoz traje otprilike kao i inače na tržištu, ali jer prijevoz radimo sami, sve ide brže i bez nepotrebnog čekanja.",
+    a: "Trajanje ovisi o državi, udaljenosti i dostupnosti vozila. Budući da prijevoz obavljamo vlastitim vozilom, nema čekanja na termin vanjskog prijevoznika.",
   },
   {
-    q: "Mogu li sam pronaći auto, a vi ga uvezete?",
-    a: "Da. Pošaljite nam link oglasa — provjerimo vozilo i prodavača, javimo vam trošak uvoza i dovezemo auto.",
+    q: "Mogu li sam pronaći vozilo, a vi ga uvezete?",
+    a: "Da. Pošaljite nam poveznicu na oglas — provjeravamo vozilo i prodavatelja, dostavljamo izračun troškova uvoza i organiziramo isporuku.",
   },
 ];
 
@@ -59,10 +59,9 @@ export default function UvozPage() {
             Uvoz automobila iz EU
           </h1>
           <p className="text-white/70 max-w-xl mt-4 leading-relaxed">
-            Uvozimo automobile iz Njemačke, Austrije, Italije, Belgije, Nizozemske i
-            gotovo svake europske zemlje. Pronađemo pravi auto po konkurentnoj
-            cijeni, provjerimo ga i dovezemo do vas u Zagreb ili bilo gdje u
-            Hrvatskoj.
+            Uvozimo vozila iz Njemačke, Austrije, Italije, Belgije, Nizozemske i
+            drugih zemalja EU, prema zahtjevima klijenta. Usluga uključuje
+            pronalazak vozila, provjeru i isporuku do kupca.
           </p>
           <ul className="flex flex-wrap gap-2 mt-6">
             {COUNTRIES.map((c) => (
@@ -91,18 +90,18 @@ export default function UvozPage() {
 
       <section className="bg-paper">
         <div className="max-w-3xl mx-auto px-5 sm:px-8 py-16 flex flex-col gap-4 text-sm sm:text-base text-muted leading-relaxed">
-          <h2 className="text-2xl font-semibold text-ink">Zašto uvoz auta preko Auto Čaki</h2>
+          <h2 className="text-2xl font-semibold text-ink">Uvoz vozila preko Auto Čaki</h2>
           <p>
-            Rabljeni automobili u Njemačkoj, Austriji i drugim zemljama EU često su
-            bolje opremljeni, s urednom servisnom poviješću i po nižoj cijeni nego
-            kod nas. Problem je što kupnja u inozemstvu traži vrijeme, poznavanje
-            tržišta i organizaciju prijevoza.
+            Tržišta rabljenih vozila u Njemačkoj, Austriji i drugim zemljama EU
+            nude širi izbor modela i opreme. Kupnja u inozemstvu ipak zahtijeva
+            poznavanje tržišta, provjeru vozila i prodavatelja te organizaciju
+            prijevoza.
           </p>
           <p>
-            Mi to radimo za vas. Kao obiteljski biznis iz Zagreba vodimo svaki uvoz
-            osobno: od pretrage i provjere vozila do dovoza na vašu adresu. Prijevoz
-            radimo vlastitim vozilom i prikolicom, pa ne ovisimo o vanjskim
-            prijevoznicima — zato smo brzi i efikasni.
+            Auto Čaki preuzima cijeli postupak: pretragu i provjeru vozila,
+            dogovor s prodavateljem i isporuku do kupca. Prijevoz obavljamo
+            vlastitim transportnim vozilom i autoprikolicom, bez angažiranja
+            vanjskih prijevoznika.
           </p>
         </div>
       </section>

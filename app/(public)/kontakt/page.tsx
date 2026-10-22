@@ -15,7 +15,8 @@ export default function KontaktPage() {
         <div>
           <h1 className="text-2xl sm:text-3xl font-semibold mb-4">Kontakt</h1>
           <p className="text-sm text-muted leading-relaxed mb-8 max-w-sm">
-            Pošaljite upit ili nas nazovite direktno — javljamo se čim prije.
+            Pošaljite upit putem obrasca ili nas kontaktirajte telefonom. Odgovaramo
+            u najkraćem mogućem roku.
           </p>
           <div className="flex flex-col gap-5 text-sm">
             <div>

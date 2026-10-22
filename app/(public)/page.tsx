@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Testimonials from "@/components/Testimonials";
 
 export default function HomePage() {
   return (
@@ -11,11 +10,11 @@ export default function HomePage() {
             Prijevoz · Prodaja · Uvoz vozila
           </span>
           <h1 className="text-[clamp(2rem,6vw,3.4rem)] leading-[1.08] font-bold max-w-2xl">
-            Vaš pouzdan partner za vozila
+            Prodaja, uvoz i prijevoz vozila
           </h1>
           <p className="text-white/70 text-base sm:text-lg max-w-xl leading-relaxed">
-            Obiteljski biznis iz Zagreba — prijevoz vozila, uvoz iz cijele EU i
-            prodaja provjerenih rabljenih i novih automobila.
+            Auto Čaki se bavi prodajom rabljenih automobila, uvozom vozila iz
+            Europske unije i prijevozom vozila na području Hrvatske i Europe.
           </p>
           <div className="flex flex-wrap gap-3 mt-2">
             <Link
@@ -43,19 +42,19 @@ export default function HomePage() {
               {
                 n: "01",
                 title: "Prodaja vozila",
-                body: "Rabljena i nova vozila, provjerena prije nego dođu u ponudu, s jasnom i realnom cijenom.",
+                body: "Rabljeni automobili koji prije prodaje prolaze provjeru stanja i povijesti vozila.",
                 href: "/kontakt",
               },
               {
                 n: "02",
                 title: "Prijevoz vozila",
-                body: "Prevozimo vaše vozilo sigurno i na vrijeme, u Hrvatskoj i iz cijele Europe.",
+                body: "Prijevoz vlastitim transportnim vozilom i autoprikolicom, do dva automobila, na području Hrvatske i Europe.",
                 href: "/usluge/prijevoz",
               },
               {
                 n: "03",
                 title: "Uvoz iz EU",
-                body: "Pratimo tržišta po cijeloj Europi i donosimo vam vozila po konkurentnim cijenama.",
+                body: "Uvoz vozila iz Njemačke, Austrije, Italije, Belgije, Nizozemske i drugih zemalja EU, prema zahtjevima klijenta.",
                 href: "/usluge/uvoz",
               },
             ].map((item) => (
@@ -76,39 +75,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* GALERIJA (placeholder) */}
-      <section className="bg-paper">
-        <div className="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-10">Naš rad</h2>
-          {/* TODO: zamijeniti sa stvarnim fotografijama vozila/usluga (public/galerija/...) */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <div
-                key={i}
-                className="aspect-[4/3] rounded bg-navy/5 border border-line flex items-center justify-center text-xs text-muted"
-              >
-                Slika {i + 1}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* TESTIMONIJALI */}
-      <section className="bg-white">
-        <div className="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-10">Što kažu klijenti</h2>
-          <Testimonials />
-        </div>
-      </section>
+      {/* TODO: galerija „Naš rad“ i recenzije klijenata (components/Testimonials) —
+          vratiti kad stignu stvarne fotografije i stvarne recenzije. */}
 
       {/* PONUDA VOZILA (oglasnik dolazi u fazi 2) */}
       <section className="bg-navy text-white">
         <div className="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24 text-center flex flex-col items-center gap-4">
           <h2 className="text-2xl sm:text-3xl font-semibold">Ponuda vozila</h2>
           <p className="text-white/70 max-w-xl">
-            Trenutno pripremamo katalog vozila. Pratite nas na društvenim mrežama za
-            najnovije oglase — prva ponuda stiže uskoro.
+            Aktualna ponuda rabljenih vozila objavljuje se na našem Instagram
+            profilu. Za dostupnost i cijenu određenog vozila kontaktirajte nas.
           </p>
           <div className="flex gap-3 mt-2">
             <a

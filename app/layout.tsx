@@ -5,11 +5,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "Auto Čaki | Uvoz automobila iz EU, prijevoz i prodaja vozila – Zagreb",
+    default: "Auto Čaki | Prodaja rabljenih automobila, uvoz iz EU i prijevoz vozila",
     template: "%s | Auto Čaki Zagreb",
   },
   description:
-    "Uvoz automobila iz Njemačke, Austrije, Italije i cijele EU, prijevoz vozila autoprikolicom i prodaja provjerenih auta. Obiteljski biznis iz Zagreba — brzo i pouzdano.",
+    "Prodaja rabljenih automobila, uvoz vozila iz Njemačke, Austrije, Italije i drugih zemalja EU te prijevoz vozila autoprikolicom na području Hrvatske i Europe.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -41,7 +41,7 @@ const LOCAL_BUSINESS = {
   makesOffer: [
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Uvoz automobila iz EU", url: `${SITE.url}/usluge/uvoz` } },
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Prijevoz vozila autoprikolicom", url: `${SITE.url}/usluge/prijevoz` } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Prodaja rabljenih i novih vozila" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Prodaja rabljenih automobila" } },
   ],
 };
 

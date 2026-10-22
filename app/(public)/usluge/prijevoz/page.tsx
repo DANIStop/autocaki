@@ -3,18 +3,18 @@ import ContactForm from "@/components/ContactForm";
 export const metadata = {
   title: "Prijevoz vozila autoprikolicom – Hrvatska i Europa",
   description:
-    "Prijevoz automobila vlastitim vozilom i autoprikolicom, do 2 auta odjednom. Unutar Hrvatske i iz cijele Europe — cijena ovisno o kilometraži. Auto Čaki, Zagreb.",
+    "Prijevoz automobila vlastitim transportnim vozilom i autoprikolicom kapaciteta do dva vozila, na području Hrvatske i Europe. Cijena ovisi o udaljenosti.",
   alternates: { canonical: "/usluge/prijevoz" },
 };
 
 const FEATURES = [
   {
     title: "Vlastito vozilo i prikolica",
-    body: "Ne prosljeđujemo posao drugima — vaše vozilo prevozimo sami, od preuzimanja do dostave.",
+    body: "Prijevoz obavljamo vlastitim transportnim vozilom i autoprikolicom, od preuzimanja do dostave, bez vanjskih prijevoznika.",
   },
   {
     title: "Do 2 vozila odjednom",
-    body: "Na prikolicu stanu najviše dva automobila, pa svaki prijevoz ide bez nepotrebnog čekanja i pretovara.",
+    body: "Kapacitet autoprikolice je do dva automobila po prijevozu, bez pretovara.",
   },
   {
     title: "Hrvatska i cijela Europa",
@@ -22,22 +22,22 @@ const FEATURES = [
   },
   {
     title: "Cijena po kilometraži",
-    body: "Cijena ovisi o udaljenosti. Javite nam relaciju i odmah dobivate ponudu.",
+    body: "Cijena prijevoza ovisi o udaljenosti. Ponudu izrađujemo prema zadanoj relaciji.",
   },
 ];
 
 const FAQ = [
   {
     q: "Koliko košta prijevoz automobila?",
-    a: "Cijena ovisi o kilometraži, odnosno udaljenosti između mjesta preuzimanja i dostave. Pošaljite nam relaciju i javljamo vam točnu cijenu.",
+    a: "Cijena ovisi o udaljenosti između mjesta preuzimanja i dostave. Na temelju zadane relacije dostavljamo točnu ponudu.",
   },
   {
     q: "Koliko traje prijevoz vozila?",
-    a: "Ovisi o udaljenosti. Jer prijevoz radimo vlastitom prikolicom, termin dogovaramo direktno s vama i vozilo stiže brzo.",
+    a: "Trajanje ovisi o udaljenosti. Budući da prijevoz obavljamo vlastitim vozilom, termin preuzimanja dogovaramo izravno s klijentom.",
   },
   {
     q: "Mogu li prevesti auto kupljen u inozemstvu?",
-    a: "Da, to je jedan od najčešćih prijevoza koje radimo — preuzmemo auto kod prodavača u Njemačkoj, Austriji, Italiji ili drugoj zemlji EU i dovezemo ga do vas.",
+    a: "Da. Vozilo preuzimamo kod prodavatelja u Njemačkoj, Austriji, Italiji ili drugoj zemlji EU i dostavljamo ga na adresu kupca.",
   },
 ];
 
@@ -53,9 +53,9 @@ export default function PrijevozPage() {
             Prijevoz vozila u Hrvatskoj i iz Europe
           </h1>
           <p className="text-white/70 max-w-xl mt-4 leading-relaxed">
-            Prevozimo automobile vlastitim vozilom i autoprikolicom — sigurno i na
-            vrijeme. Idealno kad ste kupili auto u drugoj državi, prodajete ga u
-            drugom gradu ili ga samo trebate premjestiti.
+            Prijevoz vozila vlastitim transportnim vozilom i autoprikolicom
+            kapaciteta do dva automobila, na području Hrvatske i Europe. Cijena
+            prijevoza ovisi o udaljenosti.
           </p>
         </div>
       </section>
