@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import Analytics from "@/components/Analytics";
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -9,6 +10,7 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
       <main className="flex-1">{children}</main>
       <Footer />
       <WhatsAppButton />
+      <Analytics />
     </>
   );
 }
