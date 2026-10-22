@@ -22,9 +22,10 @@ export async function proxy(request: NextRequest) {
   );
 
   const { data } = await supabase.auth.getUser();
-  const isLogin = request.nextUrl.pathname === "/admin/prijava";
+  const path = request.nextUrl.pathname;
+  const isPublic = path === "/admin/prijava" || path.startsWith("/admin/lozinka");
 
-  if (!data.user && !isLogin) {
+  if (!data.user && !isPublic) {
     return NextResponse.redirect(new URL("/admin/prijava", request.url));
   }
   return response;

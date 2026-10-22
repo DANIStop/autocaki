@@ -3,12 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Suspense } from "react";
+import { ADMIN_NAV, ADMIN_TABS } from "@/lib/admin/nav";
 
-const ITEMS = [
-  { href: "/admin", label: "Pregled", icon: "M3 12l9-8 9 8M5 10v10h5v-6h4v6h5V10" },
-  { href: "/admin/vozila", label: "Vozila", icon: "M3 16l2-6c.4-1.2 1.4-2 2.7-2h8.6c1.3 0 2.3.8 2.7 2l2 6v3h-3m-12 0H3v-3m3 3a2 2 0 104 0m4 0a2 2 0 104 0" },
-  { href: "/admin/upiti", label: "Upiti", icon: "M4 5h16v11H8l-4 4V5z" },
-];
 
 function isActive(pathname: string | null, href: string) {
   if (!pathname) return false;
@@ -28,7 +24,7 @@ export function AdminSidebar() {
     <WithPathname
       render={(pathname) => (
         <nav className="flex flex-col gap-1">
-          {ITEMS.map((item) => (
+          {ADMIN_NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -52,8 +48,8 @@ export function AdminTabBar() {
     <WithPathname
       render={(pathname) => (
         <nav className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-white pb-[env(safe-area-inset-bottom)] md:hidden">
-          <div className="grid grid-cols-3">
-            {ITEMS.map((item) => (
+          <div className="grid grid-cols-5">
+            {ADMIN_TABS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}

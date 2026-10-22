@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import { listInquiries } from "@/lib/admin/data";
+import { clientFromInquiry } from "@/lib/admin/module-actions";
+import { ActionButton } from "@/components/admin/controls";
 import { PageTitle, Skeleton } from "@/components/admin/ui";
 
 const dateFmt = new Intl.DateTimeFormat("hr-HR", {
@@ -45,6 +47,9 @@ async function InquiryList() {
                 <a href={wa} target="_blank" rel="noopener noreferrer" className="rounded bg-[#25D366] px-3 py-1.5 text-xs font-semibold text-white">
                   WhatsApp
                 </a>
+                <ActionButton action={clientFromInquiry.bind(null, q.id)} className="rounded bg-navy px-3 py-1.5 text-xs font-semibold text-white">
+                  → Klijent
+                </ActionButton>
                 {q.email && (
                   <a href={`mailto:${q.email}`} className="rounded border border-line px-3 py-1.5 text-xs font-semibold hover:border-ink">
                     E-mail

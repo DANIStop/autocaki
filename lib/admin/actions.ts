@@ -5,6 +5,8 @@ import { updateTag } from "next/cache";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
 import { getSupabaseAuthClient } from "@/lib/supabase/auth";
 import { isAllowedAdminEmail, requireAdmin } from "@/lib/admin/auth";
+import { sendPasswordLink } from "@/lib/admin/password";
+import { int, money, oneOf, text } from "@/lib/admin/parse";
 import {
   FUELS, GEARBOXES, PHOTO_BUCKET, VEHICLE_STATUSES, VEHICLES_TAG,
   type VehicleStatus,
@@ -34,6 +36,30 @@ export async function signIn(_prev: FormState, formData: FormData): Promise<Form
   redirect("/admin");
 }
 
+export async function requestPasswordLink(_prev: FormState, formData: FormData): Promise<FormState> {
+  const email = String(formData.get("email") ?? "").trim();
+  if (!email) return { error: "Upišite e-mail." };
+  try {
+    await sendPasswordLink(email);
+  } catch (e) {
+    console.error("requestPasswordLink:", e);
+    return { error: "Slanje trenutno nije moguće. Pokušajte kasnije." };
+  }
+  // Isti odgovor za svaku adresu — ne otkrivamo koje adrese imaju pristup.
+  return { ok: "Ako adresa ima pristup, link je poslan. Provjerite inbox (i spam)." };
+}
+
+export async function setPassword(_prev: FormState, formData: FormData): Promise<FormState> {
+  await requireAdmin();
+  const password = String(formData.get("password") ?? "");
+  if (password.length < 10) return { error: "Lozinka mora imati najmanje 10 znakova." };
+  if (password !== String(formData.get("password2") ?? "")) return { error: "Lozinke se ne podudaraju." };
+  const supabase = await getSupabaseAuthClient();
+  const { error } = await supabase.auth.updateUser({ password });
+  if (error) return { error: `Spremanje nije uspjelo: ${error.message}` };
+  redirect("/admin");
+}
+
 export async function signOut() {
   const supabase = await getSupabaseAuthClient();
   await supabase.auth.signOut();
@@ -43,25 +69,6 @@ export async function signOut() {
 // ---------------------------------------------------------------------------
 // Vozila
 // ---------------------------------------------------------------------------
-
-const text = (fd: FormData, k: string) => {
-  const v = String(fd.get(k) ?? "").trim();
-  return v === "" ? null : v;
-};
-const int = (fd: FormData, k: string) => {
-  const v = text(fd, k);
-  if (v == null) return null;
-  const n = Number.parseInt(v.replace(/[^\d-]/g, ""), 10);
-  return Number.isFinite(n) ? n : null;
-};
-const money = (fd: FormData, k: string) => {
-  const v = text(fd, k);
-  if (v == null) return null;
-  const n = Number(v.replace(/\./g, "").replace(",", "."));
-  return Number.isFinite(n) ? n : null;
-};
-const oneOf = <T extends string>(v: string | null, allowed: Record<T, string>) =>
-  v != null && v in allowed ? (v as T) : null;
 
 function slugify(s: string) {
   return s

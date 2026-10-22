@@ -2,6 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { getVehicle, listVehicleCosts } from "@/lib/admin/data";
+import { getRepairJobForVehicle } from "@/lib/admin/modules";
+import RepairPanel from "@/components/admin/RepairPanel";
 import { vehicleTitle } from "@/lib/vehicles";
 import VehicleForm from "@/components/admin/VehicleForm";
 import PhotoManager from "@/components/admin/PhotoManager";
@@ -25,7 +27,7 @@ async function Editor({ params, searchParams }: PageProps<"/admin/vozila/[id]">)
   const { novo } = await searchParams;
   const vehicle = await getVehicle(id);
   if (!vehicle) notFound();
-  const costs = await listVehicleCosts(id);
+  const [costs, repair] = await Promise.all([listVehicleCosts(id), getRepairJobForVehicle(id)]);
   const isPublic = vehicle.status === "u_ponudi" || vehicle.status === "rezervirano";
 
   return (
@@ -60,6 +62,7 @@ async function Editor({ params, searchParams }: PageProps<"/admin/vozila/[id]">)
           listingPrice={vehicle.listing_price}
           salePrice={vehicle.sale_price}
         />
+        <RepairPanel vehicleId={vehicle.id} job={repair} />
         <div className="flex justify-end">
           <DeleteVehicleButton id={vehicle.id} />
         </div>

@@ -19,6 +19,9 @@ export default function PrijavaPage() {
           <h1 className="text-xl font-semibold mb-1">Prijava</h1>
           <p className="text-sm text-muted mb-6">Interni panel Auto Čaki</p>
           <LoginForm />
+          <a href="/admin/lozinka" className="block text-center text-sm text-muted hover:text-ink mt-5">
+            Zaboravljena ili prva lozinka?
+          </a>
         </div>
       </div>
     </div>

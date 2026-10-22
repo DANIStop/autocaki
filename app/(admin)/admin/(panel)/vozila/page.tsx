@@ -10,9 +10,12 @@ export default function VozilaPage({ searchParams }: PageProps<"/admin/vozila">)
     <>
       <PageTitle
         action={
+          <div className="flex items-center gap-4">
+          <a href="/admin/izvoz/vozila" className="hidden sm:inline text-sm font-semibold text-accent">⬇ Excel</a>
           <Link href="/admin/vozila/novo" className="bg-accent hover:bg-accent-dark text-white text-sm font-semibold px-4 py-2.5 rounded">
             + Novo vozilo
           </Link>
+          </div>
         }
       >
         Vozila
