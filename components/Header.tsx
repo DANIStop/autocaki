@@ -17,9 +17,9 @@ export default function Header() {
             src="/logo.png"
             alt="Auto Čaki"
             width={640}
-            height={216}
+            height={201}
             priority
-            className="h-12 w-auto rounded"
+            className="h-12 w-auto"
           />
         </Link>
 
