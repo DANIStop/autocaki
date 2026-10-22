@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const NAV = [
@@ -11,12 +12,15 @@ export default function Header() {
   return (
     <header className="w-full border-b border-line bg-white sticky top-0 z-30">
       <div className="max-w-6xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between gap-6">
-        <Link href="/" className="flex items-center gap-3 shrink-0">
-          {/* TODO: zamijeniti sa stvarnim logo fajlom (public/logo.png) */}
-          <span className="h-10 w-10 rounded bg-navy flex items-center justify-center text-white font-heading text-sm">
-            AČ
-          </span>
-          <span className="font-heading text-lg tracking-wide">AUTO ČAKI</span>
+        <Link href="/" className="shrink-0" aria-label="Auto Čaki — početna">
+          <Image
+            src="/logo.png"
+            alt="Auto Čaki"
+            width={640}
+            height={216}
+            priority
+            className="h-12 w-auto rounded"
+          />
         </Link>
 
         <nav className="hidden md:flex items-center gap-7">

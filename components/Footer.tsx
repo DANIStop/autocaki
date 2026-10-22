@@ -1,9 +1,15 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer className="w-full bg-navy text-white mt-auto">
-      <div className="max-w-6xl mx-auto px-5 sm:px-8 py-14 grid gap-10 sm:grid-cols-2 md:grid-cols-4">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 pt-12">
+        <Link href="/" aria-label="Auto Čaki — početna" className="inline-block">
+          <Image src="/logo.png" alt="Auto Čaki" width={640} height={216} className="h-16 w-auto" />
+        </Link>
+      </div>
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 pt-8 pb-14 grid gap-10 sm:grid-cols-2 md:grid-cols-4">
         <div>
           <div className="text-xs font-semibold tracking-widest uppercase text-accent mb-2">
             E-mail
