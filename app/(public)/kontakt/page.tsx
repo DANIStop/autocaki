@@ -1,6 +1,12 @@
 import ContactForm from "@/components/ContactForm";
+import { SITE } from "@/lib/site";
 
-export const metadata = { title: "Kontakt — Auto Čaki" };
+export const metadata = {
+  title: "Kontakt – Ulica Božidara Magovca 109, Zagreb",
+  description:
+    "Kontaktirajte Auto Čaki za uvoz automobila, prijevoz vozila ili kupnju auta. Telefon i WhatsApp +385 99 660 0888, Ulica Božidara Magovca 109, Zagreb.",
+  alternates: { canonical: "/kontakt" },
+};
 
 export default function KontaktPage() {
   return (
@@ -28,7 +34,9 @@ export default function KontaktPage() {
               <div className="text-xs font-semibold tracking-widest uppercase text-accent mb-1">
                 Lokacija
               </div>
-              <span>Zagreb, Hrvatska</span>
+              <a href={SITE.mapsUrl} target="_blank" rel="noopener noreferrer">
+                {SITE.street}, {SITE.city}
+              </a>
             </div>
           </div>
         </div>

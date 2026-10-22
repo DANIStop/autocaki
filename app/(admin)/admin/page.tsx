@@ -1,4 +1,4 @@
-export const metadata = { title: "Admin — Auto Čaki" };
+export const metadata = { title: "Admin", robots: { index: false, follow: false } };
 
 // Faza 2: Supabase Auth login (Danis + Dino), Dashboard, Flota/vozila, Troškovnik,
 // Klijenti, Štete, Putni nalozi, Prijevoz (usluga), Praćenje stranih oglasa,

@@ -1,6 +1,11 @@
 import Testimonials from "@/components/Testimonials";
 
-export const metadata = { title: "O nama — Auto Čaki" };
+export const metadata = {
+  title: "O nama – obiteljski auto biznis iz Zagreba",
+  description:
+    "Auto Čaki vode braća Danis i Dino — uvoz automobila iz EU, prijevoz vozila i prodaja provjerenih auta iz Zagreba, bez posrednika.",
+  alternates: { canonical: "/o-nama" },
+};
 
 export default function ONamaPage() {
   return (

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SITE } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -30,7 +31,16 @@ export default function Footer() {
           <div className="text-xs font-semibold tracking-widest uppercase text-accent mb-2">
             Lokacija
           </div>
-          <span className="text-sm">Zagreb, Hrvatska</span>
+          <a
+            href={SITE.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm hover:text-accent"
+          >
+            {SITE.street}
+            <br />
+            {SITE.city}, Hrvatska
+          </a>
         </div>
         <div>
           <div className="text-xs font-semibold tracking-widest uppercase text-accent mb-2">
