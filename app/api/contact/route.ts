@@ -34,7 +34,7 @@ export async function POST(request: Request) {
       phone,
       email: email || null,
       message,
-      vehicle_id: vehicleId || null,
+      vehicle_id: vehicleId && /^[0-9a-f-]{36}$/i.test(vehicleId) ? vehicleId : null,
     });
     if (error) {
       console.error("Supabase insert (inquiries) failed:", error.message);

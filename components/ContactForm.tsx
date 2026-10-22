@@ -6,8 +6,10 @@ type Status = "idle" | "sending" | "sent" | "error";
 
 export default function ContactForm({
   defaultSubject,
+  vehicleId,
 }: {
   defaultSubject?: string;
+  vehicleId?: string;
 }) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
@@ -25,6 +27,7 @@ export default function ContactForm({
       email: String(data.get("email") || ""),
       message: String(data.get("message") || ""),
       subject: defaultSubject ?? "Upit s kontakt forme",
+      vehicleId,
     };
 
     try {
